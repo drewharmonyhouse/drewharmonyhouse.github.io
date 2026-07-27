@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drew | The Human Jukebox</title>
+<meta name="description" content="Drew is a full-time pianist and vocalist in Salt Lake City. 8,000+ songs from memory, no sheet music, no setlist. Bar residencies, live karaoke, weddings, private events, improv musicals.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav container">
+    <a href="#home" class="logo">DREW<span>.</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#shows">What I Offer</a></li>
+      <li><a href="#barshow">The Bar Show</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact" class="btn-nav">Book Me</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-bg"></div>
+    <div class="container hero-content">
+      <h1>DREW<span class="accent">.</span></h1>
+      <p class="hero-tagline">The Human Jukebox</p>
+      <p class="hero-bio">I'm a full-time professional musician in Salt Lake City. I play more than 8,000 songs from memory. No sheet music, no setlist. You name it, I play it.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">Book Me</a>
+        <button type="button" class="btn btn-outline" id="shareBtn" data-label="Send To A Friend">Send To A Friend</button>
+      </div>
+      <p class="share-note" id="shareNote" role="status" aria-live="polite"></p>
+      <ul class="stats hero-stats">
+        <li><strong>8,000+</strong><span>Songs From Memory</span></li>
+        <li><strong>1,300+</strong><span>Shows Played</span></li>
+        <li><strong>25+</strong><span>Years At The Piano</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- WHAT I OFFER -->
+  <section id="shows" class="shows section">
+    <div class="container">
+      <h2 class="center">What I Offer</h2>
+      <p class="center section-sub">Same player, different rooms.</p>
+
+      <div class="product-grid">
+
+        <article class="product product-featured">
+          <div class="photo-placeholder">[Photo: packed bar, crowd singing, tip jar on the piano]</div>
+          <div class="product-body">
+            <p class="product-flag">The main event</p>
+            <h3>The All-Request Piano Bar Show</h3>
+            <p>The crowd picks every song. They tip to move their request up the queue, so the room competes to hear what it wants next. Sing-along driven, four hours, no setlist.</p>
+            <details class="product-more">
+              <summary>See more</summary>
+              <div class="product-more-body">
+                <p>Four hours, solo, with a loop machine. It fits a small stage and sounds like a full band.</p>
+                <p>Requests come in all night. People tip to move their song up the queue, so the room competes with itself and stays put between songs.</p>
+                <p>I bring my own gear and run my own sound. All I need is power and somewhere to sit.</p>
+                <a href="#contact" class="product-cta" data-gig="All-request piano bar show">Book Me &rarr;</a>
+              </div>
+            </details>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="photo-placeholder">[Photo: taking a request at the piano]</div>
+          <div class="product-body">
+            <h3>The Human Jukebox</h3>
+            <p>8,000+ songs from memory, played and sung by request.</p>
+            <details class="product-more">
+              <summary>See more</summary>
+              <div class="product-more-body">
+                <p>Every era, most genres. Classic rock, country, Motown, pop, showtunes, hip hop, whatever the room asks for.</p>
+                <p>No sheet music and no screen in front of me. If someone names it and I know it, it starts immediately.</p>
+                <p>Works as a full show or as background depending on what the room needs.</p>
+                <a href="#contact" class="product-cta" data-gig="The Human Jukebox">Book Me &rarr;</a>
+              </div>
+            </details>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="photo-placeholder">[Photo: backing a singer, crowd singing along]</div>
+          <div class="product-body">
+            <h3>Live Karaoke</h3>
+            <p>Your guests sing. I accompany live on piano, not backing tracks.</p>
+            <details class="product-more">
+              <summary>See more</summary>
+              <div class="product-more-body">
+                <p>Your guests sing, I play their song live on piano and fill in the harmonies.</p>
+                <p>It's slower to start than machine karaoke and much better once it does. Singers can change key, restart, or take it faster, which a backing track can't do.</p>
+                <p>Good for parties, work events, and bar nights where the crowd already wants to participate.</p>
+                <a href="#contact" class="product-cta" data-gig="Live karaoke">Book Me &rarr;</a>
+              </div>
+            </details>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="photo-placeholder">[Photo: mid-improv-musical on stage]</div>
+          <div class="product-body">
+            <h3>Improv Musicals</h3>
+            <p>A full musical, made up on the spot. Regular pianist for Improv Broadway, Crowdsourced Comedy, and Salt Lake Improv.</p>
+            <details class="product-more">
+              <summary>See more</summary>
+              <div class="product-more-body">
+                <p>A complete musical built from an audience suggestion, performed once and never again.</p>
+                <p>I'm a regular pianist for Improv Broadway, Crowdsourced Comedy, and Salt Lake Improv, and play improv comedy musicals at WhyKiki.</p>
+                <p>Books as a specialty act. Priced higher than a standard set.</p>
+                <a href="#contact" class="product-cta" data-gig="Improv musical">Book Me &rarr;</a>
+              </div>
+            </details>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="photo-placeholder">[Photo: playing a wedding reception]</div>
+          <div class="product-body">
+            <h3>Weddings</h3>
+            <p>Ceremony, cocktail hour, reception.</p>
+            <details class="product-more">
+              <summary>See more</summary>
+              <div class="product-more-body">
+                <p>Ceremony, cocktail hour, and reception, or any one of the three.</p>
+                <p>First dance and processional songs get learned in advance and played exactly the way you want them.</p>
+                <p>Guests can request through the night, which usually keeps the floor busier than a fixed playlist.</p>
+                <a href="#contact" class="product-cta" data-gig="Wedding">Book Me &rarr;</a>
+              </div>
+            </details>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="photo-placeholder">[Photo: at a packed house party]</div>
+          <div class="product-body">
+            <h3>Private Parties</h3>
+            <p>Birthdays, anniversaries, house parties. Any size.</p>
+            <details class="product-more">
+              <summary>See more</summary>
+              <div class="product-more-body">
+                <p>Birthdays, anniversaries, backyards, holiday parties, house parties. Ten people or two hundred.</p>
+                <p>Request-driven, so the music matches whoever actually showed up.</p>
+                <p>I scale the volume and the setup to the room.</p>
+                <a href="#contact" class="product-cta" data-gig="Private party">Book Me &rarr;</a>
+              </div>
+            </details>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="photo-placeholder">[Photo: Keyed Up full production, two pianos and lights]</div>
+          <div class="product-body">
+            <h3>Big Shows &amp; Corporate</h3>
+            <p>Booked through Keyed Up Entertainment. Two pianists, guitar, vocalists, and full lighting.</p>
+            <details class="product-more">
+              <summary>See more</summary>
+              <div class="product-more-body">
+                <p>Booked through Keyed Up Entertainment rather than directly through me.</p>
+                <p>Full production available: two pianists, guitar, vocalists, and lighting.</p>
+                <p>Right fit for company parties, fundraisers, and larger venues that need more than one player.</p>
+                <a href="#contact" class="product-cta" data-gig="Big show / corporate">Book Me &rarr;</a>
+              </div>
+            </details>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="center fine-print">Also available as background music, and for studio work: session piano, production, and co-writing with working musicians.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact section">
+    <div class="container contact-grid">
+      <div class="contact-info">
+        <h2>Book me.</h2>
+        <p class="rates-line">Rates are quoted per event. Send me a date and what kind of gig it is, and I'll come back with a number.</p>
+        <ul class="contact-details">
+          <li><strong>Call or text:</strong> <a href="tel:+15555555555">(555) 555-5555</a></li>
+          <li><strong>Email:</strong> <a href="mailto:drew.harmonyhouse@gmail.com">drew.harmonyhouse@gmail.com</a></li>
+          <li><strong>Based in:</strong> Salt Lake City, UT</li>
+        </ul>
+        <div class="hero-social contact-social">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="TikTok">TT</a>
+          <a href="#" aria-label="YouTube">YT</a>
+          <a href="#" aria-label="Spotify">SP</a>
+          <a href="#" aria-label="Facebook">FB</a>
+        </div>
+      </div>
+
+      <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <label>
+          <span class="label-text">Your name <span class="req" aria-hidden="true">*</span></span>
+          <input type="text" name="name" autocomplete="name" required>
+        </label>
+
+        <div class="form-row">
+          <label>
+            <span class="label-text">Phone <span class="req" aria-hidden="true">*</span></span>
+            <input type="tel" name="phone" autocomplete="tel" required>
+          </label>
+          <label>
+            <span class="label-text">Email</span>
+            <input type="email" name="email" autocomplete="email">
+          </label>
+        </div>
+
+        <label>
+          <span class="label-text">What's the gig? <span class="req" aria-hidden="true">*</span></span>
+          <select name="event_type" id="eventType" required>
+            <option value="">Select one&hellip;</option>
+            <option value="All-request piano bar show">All-request piano bar show</option>
+            <option value="Weekly residency">Weekly residency</option>
+            <option value="The Human Jukebox">The Human Jukebox</option>
+            <option value="Live karaoke">Live karaoke</option>
+            <option value="Improv musical">Improv musical</option>
+            <option value="Wedding">Wedding</option>
+            <option value="Private party">Private party</option>
+            <option value="Big show / corporate">Big show / corporate</option>
+            <option value="Studio work">Studio work</option>
+            <option value="Something else">Something else</option>
+          </select>
+        </label>
+
+        <label>
+          <span class="label-text">What night?</span>
+          <input type="date" name="event_date">
+          <span class="field-hint">Leave blank if you're flexible, or asking about a weekly residency.</span>
+        </label>
+
+        <label>
+          <span class="label-text">Details</span>
+          <textarea name="message" rows="4" placeholder="Where, how long, how many people&hellip;"></textarea>
+        </label>
+
+        <button type="submit" class="btn btn-primary btn-full">Send</button>
+        <p class="form-note" id="formNote"></p>
+        <p class="donate-line">Not booking, just want to tip? <a href="https://venmo.com/u/YOUR_VENMO_HANDLE" target="_blank" rel="noopener noreferrer">Venmo me</a>.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- THE BAR SHOW -->
+  <section id="barshow" class="barshow section">
+    <div class="container">
+      <p class="eyebrow center">The Bar Show</p>
+      <h2 class="center">Someone yells for Free Bird.</h2>
+
+      <div class="scene">
+        <p>Usually that's a heckle. Here it's <em>a request</em>. Nine minutes later the room is still on its feet, and the bachelorette party in the corner is ordering another round.</p>
+      </div>
+
+      <div class="barshow-grid">
+        <div class="barshow-photo">
+          <div class="photo-placeholder tall">[Photo: packed room, crowd engaged]</div>
+        </div>
+        <div class="barshow-copy">
+          <h3 class="record-heading">How the night runs</h3>
+          <ul class="pitch-list">
+            <li><strong>The crowd picks every song.</strong> No setlist. The whole show is whatever that room wants to hear.</li>
+            <li><strong>They tip to jump the queue.</strong> Requests compete. People who want to hear their song next stay, and they keep ordering.</li>
+            <li><strong>Everything from memory.</strong> 8,000+ songs, no sheet music, no screen. Most players in this town read lyrics and chords off an iPad.</li>
+            <li><strong>Live karaoke on tap.</strong> When the room wants to sing it themselves, I back them live.</li>
+          </ul>
+
+          <div class="residency-ask">
+            <p class="residency-ask-label">What I'm looking for</p>
+            <p><strong>One room, one night a week.</strong> I've held a weekly bar night for ten years. Four hours a night, three and four nights a week. I know how to carry a slow Tuesday, and how to still be carrying it in month eleven.</p>
+          </div>
+
+          <a href="#contact" class="btn btn-primary" data-gig="Weekly residency">Book Me</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about section">
+    <div class="container">
+      <h2 class="center">More About Drew</h2>
+
+      <div class="about-grid">
+        <div class="about-photo">
+          <div class="photo-placeholder tall">[Photo: portrait at the piano, looking at camera]</div>
+        </div>
+        <div class="about-copy">
+          <p>I've worked full time in music for over a decade. I play piano and sing, and I take requests all night without sheet music or a setlist.</p>
+          <p>I improvise too. Give me a title, a subject, or somebody's name and I'll write the song on the spot. That's most of what I do with the improv comedy groups here.</p>
+          <p>I started piano at five. At sixteen I won the Stillman Kelley national classical championship, and Westminster gave me a full ride. I've played more than 1,300 shows since.</p>
+          <p>Packed house or one guy at the Star Bar in Park City, I want every eye in the room.</p>
+
+          <div class="influences">
+            <p class="influences-label">What's in the hands</p>
+            <p><strong>Raised on</strong> the Carpenters, ABBA, Styx, Boston, Queen, Dan Fogelberg, and at nine years old, NSYNC.</p>
+            <p><strong>Shaped by</strong> Beethoven, Billy Joel, John Williams, and Jon Schmidt.</p>
+            <p><strong>Sharpened by</strong> Dr. Dre, Tupac, Eminem, and Bo Burnham.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="record-cols">
+        <div class="record-col">
+          <h3 class="record-heading">Credentials</h3>
+          <ul class="credits">
+            <li><strong>National Champion</strong>, Stillman Kelley classical piano competition, 2008. Won at sixteen.</li>
+            <li><strong>Sterling Scholar.</strong> Full-tuition scholarship to Westminster.</li>
+            <li><strong>B.A. Music</strong>, Westminster. Theory and piano performance.</li>
+            <li><strong>Ten years of dueling pianos</strong>, weekly, at the Tavernacle in Salt Lake City.</li>
+            <li><strong>The Drifters.</strong> Band director, synth, and piano.</li>
+            <li><strong>Two albums and an EP</strong> released on Spotify.</li>
+          </ul>
+        </div>
+        <div class="record-col">
+          <h3 class="record-heading">Now</h3>
+          <ul class="credits">
+            <li>Regular improv pianist on three rosters: <strong>Improv Broadway</strong>, <strong>Crowdsourced Comedy</strong>, and <strong>Salt Lake Improv</strong>.</li>
+            <li>Improv comedy musicals at <strong>WhyKiki</strong> and a vegan diner downtown.</li>
+            <li><strong>The Spur</strong> in Park City. The crowd is mostly out-of-state and changes nightly.</li>
+            <li>Apr&egrave;s-ski at the <strong>St. Regis</strong>. Recently the <strong>Murray Theatre</strong>.</li>
+            <li>The <strong>Gateway tree lighting</strong> ceremony, every year.</li>
+            <li>Original songs that circulate locally on social media.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="press-bio">
+        <p class="press-bio-label">Short bio &mdash; copy this for listings and event pages</p>
+        <p>Drew is a Salt Lake City pianist and vocalist who performs more than 8,000 songs from memory, without sheet music or a setlist. He is a national champion of the Stillman Kelley classical piano competition and a Westminster music graduate. He has played over 1,300 shows, released two albums and an EP, and spent ten years playing weekly dueling pianos in Salt Lake City. He is a regular improv pianist for Improv Broadway, Crowdsourced Comedy, and Salt Lake Improv.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <a href="#home" class="logo">DREW<span>.</span></a>
+    <p>&copy; <span id="year"></span> Harmony House Records LLC</p>
+    <div class="hero-social">
+      <a href="#" aria-label="Instagram">IG</a>
+      <a href="#" aria-label="TikTok">TT</a>
+      <a href="#" aria-label="YouTube">YT</a>
+      <a href="#" aria-label="Spotify">SP</a>
+      <a href="#" aria-label="Facebook">FB</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js?v=7"></script>
+</body>
+</html>
