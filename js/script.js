@@ -35,17 +35,60 @@ document.querySelectorAll('[data-gig]').forEach(trigger => {
   });
 });
 
+// Touch: let the whole card toggle its own detail panel.
+// There's no hover on a phone, so the tappable area should be generous.
+// The <summary> stays the real control — this just widens the target.
+const isTouch = window.matchMedia('(hover: none)').matches;
+
+document.querySelectorAll('.product').forEach(card => {
+  const details = card.querySelector('details.product-more');
+  if (!details) return;
+
+  // Mirror open state onto the card so it can be styled, whether it was
+  // opened by the summary, the keyboard, or a tap anywhere on the card.
+  details.addEventListener('toggle', () => {
+    card.classList.toggle('is-open', details.open);
+  });
+
+  // On touch there's no hover, so the whole card is the tap target.
+  if (isTouch) {
+    card.addEventListener('click', (e) => {
+      // Don't hijack real links, and don't fight summary's native toggle.
+      if (e.target.closest('a') || e.target.closest('summary')) return;
+      details.open = !details.open;
+    });
+  }
+});
+
+// Date field: open the native calendar from anywhere in the field, not just
+// the little icon. Also stop anyone booking a date that has already passed.
+const dateInput = document.querySelector('#contactForm input[type="date"]');
+
+if (dateInput) {
+  const today = new Date();
+  const local = new Date(today.getTime() - today.getTimezoneOffset() * 60000);
+  dateInput.min = local.toISOString().split('T')[0];
+
+  if (typeof dateInput.showPicker === 'function') {
+    dateInput.addEventListener('click', () => {
+      // showPicker throws if it isn't treated as a user gesture; ignore that.
+      try { dateInput.showPicker(); } catch (err) { /* fall back to native icon */ }
+    });
+  }
+}
+
 // Share: native share sheet where supported, clipboard copy everywhere else
 const shareBtn = document.getElementById('shareBtn');
 const shareNote = document.getElementById('shareNote');
 
 function flashShareNote(message) {
+  if (!shareNote) return;
   shareNote.textContent = message;
   clearTimeout(flashShareNote.timer);
   flashShareNote.timer = setTimeout(() => { shareNote.textContent = ''; }, 4000);
 }
 
-shareBtn.addEventListener('click', async () => {
+if (shareBtn) shareBtn.addEventListener('click', async () => {
   const url = window.location.href;
   const shareData = {
     title: document.title,

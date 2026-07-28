@@ -148,25 +148,18 @@ h3 { font-size: 1.35rem; margin-bottom: 8px; }
   border-radius: 2px;
 }
 
-/* Hero — compact, photo alongside the intro */
+/* Hero — name, role, city. Nothing else. */
 .hero {
   position: relative;
-  padding: 132px 0 72px;
+  padding: 190px 0 130px;
   overflow: hidden;
 }
-.hero-inner {
-  display: grid;
-  grid-template-columns: 0.75fr 1.25fr;
-  gap: 52px;
-  align-items: center;
-}
-.hero-inner > * { min-width: 0; }
-.hero-photo .photo-placeholder { aspect-ratio: 4/5; }
+.hero-content { text-align: center; }
 
 .hero-line {
-  font-size: 1.15rem;
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
   color: var(--color-text-dim);
-  margin-top: 10px;
+  margin-top: 14px;
 }
 .hero-bg {
   position: absolute;
@@ -179,14 +172,14 @@ h3 { font-size: 1.35rem; margin-bottom: 8px; }
 }
 
 .hero h1 {
-  font-size: clamp(3.2rem, 8vw, 5.6rem);
-  line-height: 0.9;
+  font-size: clamp(4.5rem, 15vw, 9rem);
+  line-height: 0.88;
 }
 .hero-tagline {
   font-family: var(--font-display);
-  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-size: clamp(1.7rem, 4.5vw, 2.8rem);
   font-weight: 600;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   text-transform: uppercase;
   color: var(--color-primary);
   margin-top: 4px;
@@ -489,12 +482,12 @@ h3 { font-size: 1.35rem; margin-bottom: 8px; }
 }
 .product-featured h3 { font-size: 1.75rem; }
 .product-flag {
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 700;
   color: var(--color-accent);
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 .product .photo-placeholder {
   border: none;
@@ -642,6 +635,14 @@ h3 { font-size: 1.35rem; margin-bottom: 8px; }
   max-width: 100%;
 }
 .contact-form textarea { resize: vertical; }
+
+/* The native calendar icon renders dark-on-dark; flip it and widen its hit area */
+.contact-form input[type="date"] { cursor: pointer; }
+.contact-form input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.8);
+  cursor: pointer;
+  padding: 4px;
+}
 .contact-form input:focus,
 .contact-form select:focus,
 .contact-form textarea:focus {
@@ -724,8 +725,6 @@ h3 { font-size: 1.35rem; margin-bottom: 8px; }
 }
 
 @media (max-width: 900px) {
-  .hero-inner { grid-template-columns: 1fr; gap: 34px; }
-  .hero-photo { max-width: 320px; }
   .about-grid, .barshow-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
   .product-grid { grid-template-columns: repeat(2, 1fr); }
   .stats { gap: 36px; }
@@ -783,6 +782,15 @@ h3 { font-size: 1.35rem; margin-bottom: 8px; }
     transform: translateY(-3px);
   }
   .product:hover { transform: translateY(-6px); border-color: var(--color-primary); }
+}
+
+/* An open card is coral-bordered so it's obvious which one you expanded.
+   Driven by a class rather than :has() so it doesn't hinge on cascade quirks. */
+.product.is-open {
+  border-color: var(--color-primary);
+}
+
+@media (hover: hover) and (pointer: fine) {
   .product-more summary:hover { color: var(--color-primary); }
   .product-cta:hover { color: var(--color-accent); }
   .contact-details a:hover { color: var(--color-primary); }
