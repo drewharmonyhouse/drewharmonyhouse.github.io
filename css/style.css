@@ -59,8 +59,8 @@ h3 { font-size: 1.35rem; margin-bottom: 8px; }
 
 .section-sub {
   color: var(--color-text-dim);
-  margin-top: -8px;
-  margin-bottom: 4px;
+  max-width: 640px;
+  margin: -8px auto 4px;
 }
 
 /* Buttons */
@@ -81,7 +81,6 @@ h3 { font-size: 1.35rem; margin-bottom: 8px; }
   color: var(--color-on-primary);
   box-shadow: 0 8px 24px rgba(255, 138, 107, 0.3);
 }
-.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(255, 138, 107, 0.45); }
 .btn-full { width: 100%; text-align: center; border: none; }
 
 /* Secondary / share */
@@ -89,11 +88,6 @@ h3 { font-size: 1.35rem; margin-bottom: 8px; }
   background: transparent;
   border-color: var(--color-accent);
   color: var(--color-accent);
-}
-.btn-outline:hover {
-  background: var(--color-accent);
-  color: var(--color-on-primary);
-  transform: translateY(-3px);
 }
 
 /* Header / Nav */
@@ -128,7 +122,6 @@ h3 { font-size: 1.35rem; margin-bottom: 8px; }
   font-weight: 600;
   font-size: 0.95rem;
 }
-.nav-links a:hover { color: var(--color-primary); }
 
 .btn-nav {
   background: var(--color-primary);
@@ -139,7 +132,6 @@ h3 { font-size: 1.35rem; margin-bottom: 8px; }
   font-size: 0.85rem;
   letter-spacing: 0.5px;
 }
-.btn-nav:hover { background: var(--color-primary-dark); }
 
 .nav-toggle {
   display: none;
@@ -156,14 +148,25 @@ h3 { font-size: 1.35rem; margin-bottom: 8px; }
   border-radius: 2px;
 }
 
-/* Hero */
+/* Hero — compact, photo alongside the intro */
 .hero {
   position: relative;
-  min-height: 92vh;
-  display: flex;
-  align-items: center;
-  padding-top: 100px;
+  padding: 132px 0 72px;
   overflow: hidden;
+}
+.hero-inner {
+  display: grid;
+  grid-template-columns: 0.75fr 1.25fr;
+  gap: 52px;
+  align-items: center;
+}
+.hero-inner > * { min-width: 0; }
+.hero-photo .photo-placeholder { aspect-ratio: 4/5; }
+
+.hero-line {
+  font-size: 1.15rem;
+  color: var(--color-text-dim);
+  margin-top: 10px;
 }
 .hero-bg {
   position: absolute;
@@ -174,9 +177,9 @@ h3 { font-size: 1.35rem; margin-bottom: 8px; }
     linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-alt) 100%);
   z-index: -1;
 }
-.hero-content { text-align: center; }
+
 .hero h1 {
-  font-size: clamp(4rem, 14vw, 8.5rem);
+  font-size: clamp(3.2rem, 8vw, 5.6rem);
   line-height: 0.9;
 }
 .hero-tagline {
@@ -186,7 +189,7 @@ h3 { font-size: 1.35rem; margin-bottom: 8px; }
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--color-primary);
-  margin-top: 6px;
+  margin-top: 4px;
 }
 .hero-sub {
   max-width: 540px;
@@ -206,8 +209,8 @@ h3 { font-size: 1.35rem; margin-bottom: 8px; }
 .hero-actions {
   display: flex;
   gap: 14px;
-  justify-content: center;
   flex-wrap: wrap;
+  margin-top: 26px;
   margin-bottom: 14px;
 }
 
@@ -220,8 +223,9 @@ h3 { font-size: 1.35rem; margin-bottom: 8px; }
 }
 
 .hero-stats {
-  margin: 30px 0 0;
-  gap: 46px;
+  margin: 26px 0 0;
+  gap: 40px;
+  justify-content: flex-start;
 }
 .hero-stats strong { font-size: 2.1rem; }
 
@@ -231,7 +235,7 @@ h3 { font-size: 1.35rem; margin-bottom: 8px; }
   justify-content: center;
 }
 .hero-social a {
-  width: 42px; height: 42px;
+  width: 44px; height: 44px;
   border-radius: 50%;
   border: 1px solid rgba(255,255,255,0.2);
   display: flex;
@@ -241,12 +245,6 @@ h3 { font-size: 1.35rem; margin-bottom: 8px; }
   font-weight: 700;
   letter-spacing: 1px;
   transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
-}
-.hero-social a:hover {
-  background: var(--color-primary);
-  border-color: var(--color-primary);
-  color: var(--color-on-primary);
-  transform: translateY(-3px);
 }
 
 /* Shared photo placeholder */
@@ -467,7 +465,6 @@ h3 { font-size: 1.35rem; margin-bottom: 8px; }
   min-width: 0;
   transition: transform 0.25s ease, border-color 0.25s ease;
 }
-.product:hover { transform: translateY(-6px); border-color: var(--color-primary); }
 
 /* Double-wide headline offering */
 .product-featured {
@@ -523,7 +520,9 @@ h3 { font-size: 1.35rem; margin-bottom: 8px; }
   font-weight: 700;
   font-size: 0.9rem;
   letter-spacing: 0.3px;
-  padding: 2px 0;
+  padding: 10px 0;
+  min-height: 44px;
+  box-sizing: content-box;
 }
 .product-more summary::-webkit-details-marker { display: none; }
 .product-more summary::after {
@@ -533,7 +532,6 @@ h3 { font-size: 1.35rem; margin-bottom: 8px; }
   transition: transform 0.2s ease;
 }
 .product-more[open] summary::after { content: "\2212"; }
-.product-more summary:hover { color: var(--color-primary); }
 .product-more summary:focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 3px;
@@ -558,12 +556,13 @@ h3 { font-size: 1.35rem; margin-bottom: 8px; }
 }
 
 .product-cta {
+  display: inline-block;
   color: var(--color-primary);
   font-weight: 700;
   font-size: 0.9rem;
   letter-spacing: 0.3px;
+  padding: 12px 0;
 }
-.product-cta:hover { color: var(--color-accent); }
 
 .fine-print {
   margin-top: 40px;
@@ -608,7 +607,6 @@ h3 { font-size: 1.35rem; margin-bottom: 8px; }
 .rates-line { color: var(--color-text-dim); margin-bottom: 24px; }
 .contact-details { list-style: none; margin-bottom: 28px; }
 .contact-details li { margin-bottom: 10px; color: var(--color-text-dim); }
-.contact-details a:hover { color: var(--color-primary); }
 .contact-social { justify-content: flex-start; }
 
 .contact-form {
@@ -688,7 +686,6 @@ h3 { font-size: 1.35rem; margin-bottom: 8px; }
   text-decoration: underline;
   text-underline-offset: 3px;
 }
-.donate-line a:hover { color: var(--color-primary); }
 
 /* Footer */
 .site-footer {
@@ -727,6 +724,8 @@ h3 { font-size: 1.35rem; margin-bottom: 8px; }
 }
 
 @media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 34px; }
+  .hero-photo { max-width: 320px; }
   .about-grid, .barshow-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
   .product-grid { grid-template-columns: repeat(2, 1fr); }
   .stats { gap: 36px; }
@@ -735,6 +734,15 @@ h3 { font-size: 1.35rem; margin-bottom: 8px; }
 }
 
 @media (max-width: 700px) {
+  .hero { padding: 100px 0 48px; }
+  /* nudge body copy up on phones — smaller screen, worse lighting */
+  body { font-size: 16.5px; }
+  .product-body p, .credits li, .pitch-list li { font-size: 0.95rem; }
+  .hero-line { font-size: 1.05rem; }
+  .hero-photo { max-width: none; }
+  /* a portrait crop eats the whole phone screen — go landscape here */
+  .hero-photo .photo-placeholder.tall { aspect-ratio: 3/2; }
+  .hero-stats span { font-size: 0.7rem; letter-spacing: 1px; }
   .record-cols { grid-template-columns: 1fr; gap: 32px; }
   .product-grid { grid-template-columns: 1fr; }
   .product-featured { grid-column: span 1; grid-template-columns: 1fr; }
@@ -749,4 +757,47 @@ h3 { font-size: 1.35rem; margin-bottom: 8px; }
   .form-row { grid-template-columns: 1fr; gap: 16px; }
   .footer-inner { justify-content: center; text-align: center; }
   .origin-kicker { font-size: 1.25rem; }
+}
+
+/* ---------------------------------------------------------------
+   Pointer-aware interaction
+
+   Hover states only exist for real pointers. On touch they either
+   never fire, or worse, stick after a tap until you tap elsewhere.
+   Touch devices get :active feedback and larger tap targets instead.
+   --------------------------------------------------------------- */
+
+@media (hover: hover) and (pointer: fine) {
+  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(255, 138, 107, 0.45); }
+  .btn-outline:hover {
+    background: var(--color-accent);
+    color: var(--color-on-primary);
+    transform: translateY(-3px);
+  }
+  .btn-nav:hover { background: var(--color-primary-dark); }
+  .nav-links a:hover { color: var(--color-primary); }
+  .hero-social a:hover {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-on-primary);
+    transform: translateY(-3px);
+  }
+  .product:hover { transform: translateY(-6px); border-color: var(--color-primary); }
+  .product-more summary:hover { color: var(--color-primary); }
+  .product-cta:hover { color: var(--color-accent); }
+  .contact-details a:hover { color: var(--color-primary); }
+  .donate-line a:hover { color: var(--color-primary); }
+}
+
+/* Touch: press feedback, since there is no hover to preview intent */
+@media (hover: none) {
+  .btn:active { transform: scale(0.97); }
+  .btn-nav:active { background: var(--color-primary-dark); }
+  .product-more summary:active,
+  .product-cta:active,
+  .contact-details a:active,
+  .donate-line a:active { opacity: 0.6; }
+  .hero-social a:active { background: var(--color-primary); color: var(--color-on-primary); }
+  /* cards need to read as tappable without a hover lift to hint at it */
+  .product { border-color: rgba(125, 211, 252, 0.16); }
 }
