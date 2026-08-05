@@ -249,10 +249,11 @@ h3 { font-size: 1.35rem; margin-bottom: 8px; }
 /* Shared photo placeholder */
 .photo-placeholder {
   aspect-ratio: 3/2;
+  width: 100%;
   border-radius: var(--radius);
   background: linear-gradient(135deg, var(--color-surface), var(--color-bg-alt));
   border: 1px dashed rgba(255,255,255,0.22);
-  display: flex;
+  display: block;
   object-fit: cover;
   align-items: center;
   justify-content: center;
